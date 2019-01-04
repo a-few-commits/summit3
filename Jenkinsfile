@@ -11,9 +11,13 @@ node {
         stage('Checkout') {
             checkout scm
         }
-
-        stage('Get Data') {  
+        
+        stage('Dependencies') {
+            sh "apt-get update"
             sh "apt-get install -y curl"
+        }
+
+        stage('Data') {  
             sh "curl"
         }
     }
