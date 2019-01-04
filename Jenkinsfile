@@ -6,6 +6,7 @@ def gitCommit = readFile('GIT_COMMIT').trim()
 }
 
 node {
+    sh "dockerd &"
     docker.image('ubuntu').inside {
         stage('Checkout') {
             checkout scm
