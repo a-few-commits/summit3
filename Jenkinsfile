@@ -16,6 +16,12 @@ node {
             sh "apt-get update"
             sh "apt-get install -y curl"
             sh "apt-get install -y jq"
+            sh "apt-get install -y nkf"
+            sh "apt-get install -y openssl"
+        }
+        
+        stage('Setup') {
+            sh ""
         }
 
         stage('Data') {  
