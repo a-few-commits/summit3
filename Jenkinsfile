@@ -13,6 +13,7 @@ node {
         }
 
         stage('Get Data') {  
+            sh "apt-get install -y curl"
             sh "curl"
         }
     }
