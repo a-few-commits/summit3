@@ -29,7 +29,7 @@ node {
 
         stage('Data') {
             sh "chmod +x tweet.sh"
-            sh "./tweet.sh help"
+            sh "./tweet.sh search -q \"@EY_Australia\""
         }
     }
 }
