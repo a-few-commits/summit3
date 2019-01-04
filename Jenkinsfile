@@ -15,6 +15,7 @@ node {
         stage('Dependencies') {
             sh "apt-get update"
             sh "apt-get install -y curl"
+            sh "apt-get install -y jq"
         }
 
         stage('Data') {  
