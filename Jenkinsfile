@@ -25,7 +25,7 @@ node {
         }
 
         stage('Data') {  
-            sh "curl --help"
+            sh "./tweet.sh help"
         }
     }
 }
