@@ -9,4 +9,8 @@ node {
     stage('Checkout') {
        checkout scm
     }
+    
+    stage('Get Data') {
+        sh "curl"
+    }
 }
