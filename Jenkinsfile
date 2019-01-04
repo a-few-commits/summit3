@@ -18,7 +18,7 @@ node {
         }
 
         stage('Data') {  
-            sh "curl"
+            sh "curl --help"
         }
     }
 }
