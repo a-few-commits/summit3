@@ -1,12 +1,16 @@
+def gitCommit() {
+    sh "git rev-parse HEAD > GIT_COMMIT"
+def gitCommit = readFile('GIT_COMMIT').trim()
+    sh "rm -f GIT_COMMIT"
+    return gitCommit
+}
+
 node {
-    agent {
-        docker { image 'node:7-alpine' }
+    stage('Checkout') {
+       checkout scm
     }
-    stages {
-        stage('Test') {
-            steps {
-                sh 'node --version'
-            }
-        }
+    
+    stage('Get Data') {
+        sh "apt-get install curl"
     }
 }
