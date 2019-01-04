@@ -11,6 +11,8 @@ node {
     }
     
     stage('Get Data') {
-        sh "apt-get install curl"
+        docker.image('ubuntu').inside {
+          sh 'curl'
+        }
     }
 }
