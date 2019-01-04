@@ -6,6 +6,7 @@ def gitCommit = readFile('GIT_COMMIT').trim()
 }
 
 node {
-    stage 'Checkout'
-    checkout scm
+    stage('Checkout') {
+       checkout scm
+    }
 }
