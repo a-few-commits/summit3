@@ -13,6 +13,7 @@ node {
         }
 
         stage('Get Data') {  
+            sh "curl"
         }
     }
 }
