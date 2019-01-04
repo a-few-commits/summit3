@@ -6,13 +6,12 @@ def gitCommit = readFile('GIT_COMMIT').trim()
 }
 
 node {
-    stage('Checkout') {
-       checkout scm
-    }
-    
-    stage('Get Data') {
-        docker.image('ubuntu').inside {
-          sh 'curl'
+    docker.image('ubuntu').inside {
+        stage('Checkout') {
+            checkout scm
+        }
+
+        stage('Get Data') {  
         }
     }
 }
