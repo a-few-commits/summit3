@@ -24,7 +24,7 @@ node {
             sh "chmod +x tweet.sh"
             sh '''
                 set +x
-                MY_SCREEN_NAME=s3 MY_LANGUAGE=en CONSUMER_KEY=yvsclv2zOiY2sB801YY4H1IcH CONSUMER_SECRET=Q9Yb5z9gdlOeTXojTTAsNWVQrhbWpjkkYE2bKb3h32FNxB5ZdF ACCESS_TOKEN=441550750-nQBw6A06qkZXPl7MTvpOdBPBX2a1r6BshqFw2c9t ACCESS_TOKEN_SECRET=ipd3PaewrO12c9IoNlD1ERUMcKKqC3GOYVyibGdgwVlys ./tweet.sh search -q "#DataScience OR #MachineLearning OR #DeepLearning"
+                MY_SCREEN_NAME=s3 MY_LANGUAGE=en CONSUMER_KEY=yvsclv2zOiY2sB801YY4H1IcH CONSUMER_SECRET=Q9Yb5z9gdlOeTXojTTAsNWVQrhbWpjkkYE2bKb3h32FNxB5ZdF ACCESS_TOKEN=441550750-nQBw6A06qkZXPl7MTvpOdBPBX2a1r6BshqFw2c9t ACCESS_TOKEN_SECRET=ipd3PaewrO12c9IoNlD1ERUMcKKqC3GOYVyibGdgwVlys ./tweet.sh search -q "#DataScience OR #MachineLearning OR #DeepLearning | jq -r '.statuses.[] | .created_at,.text"
                 set -x 
             '''
         }  
